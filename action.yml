@@ -70,7 +70,7 @@ inputs:
   SHOW_LANGUAGE_PER_REPO:
     required: false
     description: "Show language or framework used across different repository"
-    default: "True"
+    default: "False"
 
   SHOW_LOC_CHART:
     required: false
@@ -80,7 +80,7 @@ inputs:
   SHOW_DAYS_OF_WEEK:
     required: false
     description: "show day of week you are most productive"
-    default: "True"
+    default: "False"
 
   SHOW_PROFILE_VIEWS:
     required: false
@@ -169,9 +169,10 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://wakareadmestats/waka-readme-stats:master'
+  image: 'Dockerfile'
 
 branding:
   icon: 'activity'
   color: 'orange'
+
 
