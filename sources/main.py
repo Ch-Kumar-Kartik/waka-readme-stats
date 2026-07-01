@@ -68,7 +68,7 @@ async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
             lang_list = (
                 no_activity
                 if len(data["data"]["languages"]) == 0
-                else make_list(data["data"]["languages"])
+                else make_list(data["data"]["languages"], top_num=3)
             )
             stats += f"{FM.t('Languages')}: \n{lang_list}\n\n"
 
@@ -77,7 +77,7 @@ async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
             edit_list = (
                 no_activity
                 if len(data["data"]["editors"]) == 0
-                else make_list(data["data"]["editors"])
+                else make_list(data["data"]["editors"], top_num=3)
             )
             stats += f"{FM.t('Editors')}: \n{edit_list}\n\n"
 

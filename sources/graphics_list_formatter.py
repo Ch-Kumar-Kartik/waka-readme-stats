@@ -106,7 +106,7 @@ def make_list(
         else data[:top_num]
     )
     data_list = [
-        f"{n[:25]}{' ' * (25 - len(n))}{t}{' ' * (20 - len(t))}{make_graph(p)}   {p:05.2f} % "
+        f"{n[:33]}{' ' * (33 - len(n))}{t}{' ' * (20 - len(t))}{make_graph(p)}   {p:05.2f} % "
         for n, t, p in top_data
     ]
     return "\n".join(data_list)
