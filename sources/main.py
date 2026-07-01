@@ -71,7 +71,7 @@ async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
                 else make_list(data["data"]["languages"], top_num=3)
             )
             lang_heading = f"{FM.t('Languages')}:"
-            stats += f"{lang_heading}\n{'─' * len(lang_heading)}\n\n{lang_list}\n\n"
+            stats += f"{lang_heading}\n{'─' * len(lang_heading)}\n{lang_list}\n\n"
 
         if EM.SHOW_EDITORS:
             DBM.i("Adding user editors info...")
@@ -81,7 +81,7 @@ async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
                 else make_list(data["data"]["editors"], top_num=3)
             )
             edit_heading = f"{FM.t('Editors')}:"
-            stats += f"{edit_heading}\n{'─' * len(edit_heading)}\n\n{edit_list}\n\n"
+            stats += f"{edit_heading}\n{'─' * len(edit_heading)}\n{edit_list}\n\n"
 
         if EM.SHOW_PROJECTS:
             DBM.i("Adding user projects info...")
@@ -91,7 +91,7 @@ async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
                 else make_list(data["data"]["projects"])
             )
             proj_heading = f"{FM.t('Projects')}:"
-            stats += f"{proj_heading}\n{'─' * len(proj_heading)}\n\n{project_list}\n\n"
+            stats += f"{proj_heading}\n{'─' * len(proj_heading)}\n{project_list}\n\n"
 
         if EM.SHOW_OS:
             DBM.i("Adding user operating systems info...")
@@ -101,7 +101,7 @@ async def get_waka_time_stats(repositories: Dict, commit_dates: Dict) -> str:
                 else make_list(data["data"]["operating_systems"])
             )
             os_heading = f"{FM.t('operating system')}:"
-            stats += f"{os_heading}\n{'─' * len(os_heading)}\n\n{os_list}\n\n"
+            stats += f"{os_heading}\n{'─' * len(os_heading)}\n{os_list}\n\n"
 
         stats = f"{stats[:-1]}```\n\n"
 
